@@ -1,1 +1,1 @@
-web: gunicorn iuptec:app
+web: gunicorn manage:app
