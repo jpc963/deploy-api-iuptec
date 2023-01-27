@@ -1,0 +1,278 @@
+html{
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, p, span {
+    margin: 0;
+    color: #666;
+}
+
+.container{
+    max-width: 1920px;
+    width: 100%;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+
+header{
+    position: relative;
+    top: 0;
+    height: auto;
+    width: 100%;
+}
+
+/* ─── Navbar ─────────────────────────────────────────────────────────────── */
+
+nav{
+    position: relative;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav-container{
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#logo{
+    width: 200px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+/* ─── Formulário Login ───────────────────────────────────────────────────── */
+
+#corpo-principal{
+    position: relative;
+    margin-top: auto;
+}
+
+#form-login{
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 6em;
+    text-align: center;
+}
+
+#form-login h1{
+    font-size: 40px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+#inputs-login{
+    width: 80%;;
+    margin: auto;
+}
+
+#inputs-login input{
+    width: 60%;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#inputs-login input:focus{
+    outline: none;
+}
+
+#botoes-form{
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+#botoes-form input{
+    width: 30%;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#botoes-form input:hover{
+    transition: .5s;
+    background-color: #FF9B00;
+    color: #666;
+}
+
+/* ─── Formulário De Registro ─────────────────────────────────────────────── */
+
+#form-registro{
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3em;
+    text-align: center;
+}
+
+#form-registro h1{
+    font-size: 40px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+#inputs-registro{
+    width: 80%;;
+    margin: auto;
+}
+
+#inputs-registro input{
+    width: 60%;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#inputs-registro input:focus{
+    outline: none;
+}
+
+/* ─── Painel Do Usuário ──────────────────────────────────────────────────── */
+
+#nav-painel ul{
+    list-style: none;
+    position: relative;
+    margin: auto; 
+    float: right;
+    display: inline-flex;
+    margin: 30px;
+}
+
+#nav-painel li input{
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-right: 3px;
+    padding: 10px;
+    color: #666;
+}
+
+#nav-painel li input:hover{
+    transition: .5s;
+    background-color: #FF9B00;
+    color: #666;
+}
+
+#corpo-principal-painel{
+    position: relative;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    text-align: center;
+}
+
+#painel-veiculos-lista{
+    margin: auto;
+    width: 80%;
+    margin-top: 25px;
+}
+
+#painel-veiculos-lista table{
+    width: 100%;
+    color: #666;
+}
+
+#tabela-titulo{
+    border-bottom: 5px solid #ccc;
+}
+
+#painel-veiculos-lista table th{
+    font-size: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#painel-veiculos-lista table input{
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #666;
+    padding: 5px 30px;
+}
+
+#painel-veiculos-lista table input:hover{
+    transition: .5s;
+    background-color: #FF9B00;
+    color: #666;
+    cursor: pointer;
+}
+
+#painel-veiculos-lista td{
+    font-size: 100px;
+}
+
+/* ─── Cadastro De Veículo ────────────────────────────────────────────────── */
+
+#forms-cadastro-veiculo{
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3em;
+    text-align: center;
+}
+
+#forms-cadastro-veiculo h1{
+    font-size: 32px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+#inputs-cadastro-veiculo{
+    width: 50%;;
+    margin: auto;
+    font-size: 20px;
+    color: #666;
+    padding: 20px;
+}
+
+#inputs-cadastro-veiculo input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#inputs-cadastro-veiculo input:focus{
+    outline: none;
+}
+
+#botao-cadastrar-veiculo{
+    width: 20%;
+    height: 40px;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #666;
+}
+
+#botao-cadastrar-veiculo:hover{
+    transition: .5s;
+    background-color: #FF9B00;
+    color: #666;
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div id="corpo-principal">
+        <div id="form-login">
+            <h1>Acessar</h1>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div id="inputs-login">
+                    {% include 'partials/_alertas.html' %}
+                    <input type="text" name="email" placeholder="Digite seu Email">
+                    <input type="password" name="senha" placeholder="Digite sua Senha">
+                </div>
+                <div id="botoes-form">
+                    <input type="submit" value="Entrar">
+                    <a href="{% url 'registro' %}"><input type="button" value="Registrar"></a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

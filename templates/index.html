@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div id="corpo-principal">
+        <div id="form-login">
+            <h1>Gerenciamento de Veículos</h1>
+                <div id="botoes-form">
+                    <a href="{% url 'login' %}"><input type="button" value="Login"></a>
+                    <a href="{% url 'registro' %}"><input type="button" value="Registrar"></a>
+                </div>
+        </div>
+    </div>
+{% endblock %}

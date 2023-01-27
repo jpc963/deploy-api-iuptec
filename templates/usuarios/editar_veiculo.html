@@ -1,0 +1,20 @@
+{% load static %}  <!-- Carrega o css -->
+{% include 'partials/_nav_cadastro_edita.html' %}  <!-- Inclui o estilo do menu personalizado -->
+
+<div id="forms-cadastro-veiculo">
+    <h1>Editando Veículo: {{ veiculo.modelo }}</h1>
+    {% include 'partials/_alertas.html' %}  <!-- Inclui as messages -->
+    <form action="{% url 'atualiza_veiculo' veiculo.id %}" method="POST">
+        {% csrf_token %}  <!-- Token de segurança -->
+        <div id="form-cadastro-veiculo">
+            <div class="inputs-cadastro-veiculo">
+                <input type="text" name="placa" placeholder="Placa" value="{{ veiculo.placa }}">
+                <input type="text" name="marca" placeholder="Marca" value="{{ veiculo.marca }}">
+                <input type="text" name="modelo" placeholder="Modelo" value="{{ veiculo.modelo }}">
+                <input type="number" name="ano" placeholder="Ano" value="{{ veiculo.ano }}">
+                <input type="text" name="cor" placeholder="Cor" value="{{ veiculo.cor }}">
+            </div>
+        </div>
+        <input id="botao-cadastrar-veiculo" type="submit" value="Concluído">
+    </form>
+</div>

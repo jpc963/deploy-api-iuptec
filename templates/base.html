@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste Técnico</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="nav-container">
+                    <a href="{% url 'index' %}"><img id="logo" src="{% static 'images/logo.png' %}" alt="LogoIuptec"></a>
+                </div>
+            </nav>
+        </header>
+    </div>
+    {% block content %} {% endblock %}
+</body>
+</html>

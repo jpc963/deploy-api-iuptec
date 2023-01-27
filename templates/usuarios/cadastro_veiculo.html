@@ -1,0 +1,20 @@
+{% load static %}
+{% include 'partials/_nav_cadastro_edita.html' %}
+
+<div id="forms-cadastro-veiculo">
+    <form action="{% url 'cadastro_veiculo' veiculo.id %}" method="POST">
+        {% csrf_token %}
+        <h1>Cadastrar Veículo</h1>
+        <div id="form-cadastro-veiculo">
+            {% include 'partials/_alertas.html' %}
+            <div id="inputs-cadastro-veiculo">
+                <input type="text" name="placa" placeholder="Placa" required>
+                <input type="text" name="marca" placeholder="Marca" required>
+                <input type="text" name="modelo" placeholder="Modelo" required>
+                <input type="number" min="1960" max="2023" name="ano" placeholder="Ano" required>
+                <input type="text" name="cor" placeholder="Cor" required>
+            </div>
+        </div>
+        <input id="botao-cadastrar-veiculo" type="submit" value="Cadastrar">
+    </form>
+</div>

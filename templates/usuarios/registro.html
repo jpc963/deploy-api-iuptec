@@ -1,0 +1,27 @@
+{% extends 'base.html' %}  <!-- Carrega o template base.html -->
+{% load static %}
+{% block content %}  <!-- Carrega o conteúdo do template base.html -->
+
+    <div id="corpo-principal">
+        <div id="form-registro">
+            <form action="{% url 'registro' %}" method="POST">
+                {% csrf_token %}
+                <h1>Cadastro de novo usuário</h1>
+                <div id="inputs-registro">
+                    {% include 'partials/_alertas.html' %}
+                    <input type="text" name="usuario" placeholder="Digite seu Usuário" required minlength="5">
+                    <input type="text" name="nome" placeholder="Digite seu Nome" required>
+                    <input type="email" name="email" placeholder="Digite seu Email" required>
+                    <input type="tel" pattern="[0-9]{2}[0-9]{5}[0-9]{4}" name="telefone" placeholder="Digite seu Número" required>
+                    <input type="password" name="senha" placeholder="Digite sua Senha" required>
+                    <input type="password" name="confirma_senha" placeholder="Repita sua Senha" required>
+                </div>
+                <div id="botoes-form">
+                    <input id="submit-button" type="submit" value="Registrar">
+                    <a href="{% url 'index' %}"><input type="button" value="Cancelar"></a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
