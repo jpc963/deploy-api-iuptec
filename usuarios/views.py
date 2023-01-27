@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
+from django.views.decorators.csrf import requires_csrf_token
 
 from iuptec_site.models import Veiculos
 
 
+@requires_csrf_token
 def registro(request):
     if request.method == 'POST':  # Verifica se o método é POST, se for, pega os dados do formulário
         usuario = request.POST['usuario']
@@ -64,6 +66,7 @@ def registro(request):
         return render(request, 'usuarios/registro.html')
 
 
+@requires_csrf_token
 def login(request):
     if request.method == 'POST':
         email = request.POST['email']
@@ -106,6 +109,7 @@ def logout(request):
     return redirect('index')
 
 
+@requires_csrf_token
 def cadastro_veiculo(request):
     if request.method == 'POST':
         modelo = request.POST['modelo']
@@ -146,6 +150,7 @@ def cadastro_veiculo(request):
     return render(request, 'usuarios/cadastro_veiculo.html')
 
 
+@requires_csrf_token
 def editar_veiculo(request, veiculo_id):
     veiculo = get_object_or_404(Veiculos, pk=veiculo_id)  # Pega o veículo pelo id
     veiculo_a_editar = {
