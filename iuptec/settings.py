@@ -26,15 +26,15 @@ SECRET_KEY = 'django-insecure-jr3@=4$6v0esavq4(p92p)0lyp-ea9$p#&=rla*)e&8l$gaxma
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'localhost']
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'https://api-iuptec-jpc.up.railway.app/']
-CORS_ORIGIN_WHITELIST = ['http://localhost:8000', 'https://api-iuptec-jpc.up.railway.app/']
+
+CSRF_TRUSTED_ORIGINS = ['https://api-iuptec-jpc.up.railway.app/', 'http://127.0.0.1:8000/']
+
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_WHITELIST = ['*']
 
 # Application definition
 
 INSTALLED_APPS = [
-    'iuptec_site',
-    'usuarios',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,13 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
+    'iuptec_site',
+    'usuarios'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -124,8 +126,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'iuptec/static')
+]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type

@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 from iuptec_site.models import Veiculos
 
 
+@ensure_csrf_cookie
 def registro(request):
     if request.method == 'POST':  # Verifica se o método é POST, se for, pega os dados do formulário
         usuario = request.POST['usuario']
@@ -64,12 +66,18 @@ def registro(request):
         return render(request, 'usuarios/registro.html')
 
 
+@ensure_csrf_cookie
 def login(request):
     if request.method == 'POST':
         email = request.POST['email']
         senha = request.POST['senha']
 
-        if email_login_vazio(request, email, senha):
+        if em_branco(email):
+            messages.error(request, 'O campo email é obrigatório')
+            return redirect('login')
+
+        if em_branco(senha):
+            messages.error(request, 'O campo senha é obrigatório')
             return redirect('login')
 
         if User.objects.filter(email=email).exists():
@@ -106,6 +114,7 @@ def logout(request):
     return redirect('index')
 
 
+@ensure_csrf_cookie
 def cadastro_veiculo(request):
     if request.method == 'POST':
         modelo = request.POST['modelo']
@@ -145,7 +154,7 @@ def cadastro_veiculo(request):
         return redirect('dashboard')
     return render(request, 'usuarios/cadastro_veiculo.html')
 
-
+ 
 def editar_veiculo(request, veiculo_id):
     veiculo = get_object_or_404(Veiculos, pk=veiculo_id)  # Pega o veículo pelo id
     veiculo_a_editar = {
@@ -154,6 +163,7 @@ def editar_veiculo(request, veiculo_id):
     return render(request, 'usuarios/editar_veiculo.html', veiculo_a_editar)
 
 
+@ensure_csrf_cookie
 def atualiza_veiculo(request, veiculo_id):
     if request.method == 'POST':
         modelo = request.POST['modelo']
@@ -234,14 +244,6 @@ def nome_valido(nome):  # Verifica se o nome é válido
 
 def nome_existente(nome):  # Verifica se o nome já existe no banco de dados
     return User.objects.filter(username=nome).exists()
-
-
-def email_login_vazio(request, email, senha):  # Verifica se o email e a senha estão em branco no login
-    if em_branco(email):
-        return messages.error(request, 'O campo email não pode ficar em branco')
-
-    if em_branco(senha):
-        return messages.error(request, 'O campo senha não pode ficar em branco')
 
 
 def usuario_existente(usuario):
