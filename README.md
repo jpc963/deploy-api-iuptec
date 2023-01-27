@@ -1,10 +1,10 @@
-Cria um sistema de cadastro de veículos com as seguintes funcionalidades:
+## Sistema de cadastro de veículos com as seguintes funcionalidades:
 
-[x] Cadastro de usuários
-[x] Cadastro de veículos
-[x] Listagem de veículos
-[x] Edição de veículos
-[x] Exclusão de veículos
+1. Cadastro de usuários
+2. Cadastro de veículos
+3. Listagem de veículos
+4. Edição de veículos
+5. Exclusão de veículos
 
 ## Como executar o projeto
 
