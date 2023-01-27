@@ -5,6 +5,7 @@
     <h1>Editando Veículo: {{ veiculo.modelo }}</h1>
     {% include 'partials/_alertas.html' %}  <!-- Inclui as messages -->
     <form action="{% url 'atualiza_veiculo' veiculo.id %}" method="POST">
+        {% csrf_token %}  <!-- Token de segurança -->
         <div id="form-cadastro-veiculo">
             <div class="inputs-cadastro-veiculo">
                 <input type="text" name="placa" placeholder="Placa" value="{{ veiculo.placa }}">

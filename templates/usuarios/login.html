@@ -5,6 +5,7 @@
         <div id="form-login">
             <h1>Acessar</h1>
             <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
                 <div id="inputs-login">
                     {% include 'partials/_alertas.html' %}
                     <input type="text" name="email" placeholder="Digite seu Email">

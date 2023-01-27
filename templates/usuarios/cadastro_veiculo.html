@@ -3,6 +3,7 @@
 
 <div id="forms-cadastro-veiculo">
     <form action="{% url 'cadastro_veiculo' veiculo.id %}" method="POST">
+        {% csrf_token %}
         <h1>Cadastrar Veículo</h1>
         <div id="form-cadastro-veiculo">
             {% include 'partials/_alertas.html' %}
