@@ -1,12 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-from django.views.decorators.csrf import csrf_protect
 
 from iuptec_site.models import Veiculos
 
 
-@csrf_protect
 def registro(request):
     if request.method == 'POST':  # Verifica se o método é POST, se for, pega os dados do formulário
         usuario = request.POST['usuario']
@@ -66,7 +64,6 @@ def registro(request):
         return render(request, 'usuarios/registro.html')
 
 
-@csrf_protect
 def login(request):
     if request.method == 'POST':
         email = request.POST['email']
@@ -90,7 +87,6 @@ def login(request):
     return render(request, 'usuarios/login.html')
 
 
-@csrf_protect
 def dashboard(request):
     if request.user.is_authenticated:
         usuario = get_object_or_404(User, pk=request.user.id)  # Pega o usuário logado
@@ -110,7 +106,6 @@ def logout(request):
     return redirect('index')
 
 
-@csrf_protect
 def cadastro_veiculo(request):
     if request.method == 'POST':
         modelo = request.POST['modelo']
@@ -151,7 +146,6 @@ def cadastro_veiculo(request):
     return render(request, 'usuarios/cadastro_veiculo.html')
 
 
-@csrf_protect
 def editar_veiculo(request, veiculo_id):
     veiculo = get_object_or_404(Veiculos, pk=veiculo_id)  # Pega o veículo pelo id
     veiculo_a_editar = {
@@ -160,7 +154,6 @@ def editar_veiculo(request, veiculo_id):
     return render(request, 'usuarios/editar_veiculo.html', veiculo_a_editar)
 
 
-@csrf_protect
 def atualiza_veiculo(request, veiculo_id):
     if request.method == 'POST':
         modelo = request.POST['modelo']
@@ -204,7 +197,6 @@ def atualiza_veiculo(request, veiculo_id):
         return redirect('dashboard')
 
 
-@csrf_protect
 def excluir_veiculo(veiculo_id):
     veiculo = get_object_or_404(Veiculos, pk=veiculo_id)  # Pega o veículo pelo id
     veiculo.delete()  # Deleta o veículo

@@ -5,7 +5,6 @@
     <div id="corpo-principal">
         <div id="form-registro">
             <form action="{% url 'registro' %}" method="POST">
-                {% csrf_token %}
                 <h1>Cadastro de novo usuário</h1>
                 <div id="inputs-registro">
                     {% include 'partials/_alertas.html' %}
