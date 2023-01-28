@@ -203,7 +203,7 @@ def atualiza_veiculo(request, veiculo_id):
         return redirect('dashboard')
 
 
-def excluir_veiculo(veiculo_id):
+def excluir_veiculo(request, veiculo_id):
     veiculo = get_object_or_404(Veiculos, pk=veiculo_id)  # Pega o veículo pelo id
     veiculo.delete()  # Deleta o veículo
     return redirect('dashboard')
