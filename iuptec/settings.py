@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -84,10 +85,11 @@ WSGI_APPLICATION = 'iuptec.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'iuptec_teste',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '221210',
-        'HOST': 'localhost',
+        'PASSWORD': 'JQBTOaBkneFApc0pGrlH',
+        'HOST': 'containers-us-west-195.railway.app',
+        'PORT': '6227',
     }
 }
 
