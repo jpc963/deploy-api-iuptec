@@ -4,11 +4,11 @@
     <div id="corpo-principal">
         <div id="form-login">
             <h1>Acessar</h1>
-            <form action="{% url 'login' %}" method="POST">
+            <form action="{% url 'login' %}" method="POST" autocomplete="on">
                 {% csrf_token %}
                 <div id="inputs-login">
                     {% include 'partials/_alertas.html' %}
-                    <input type="text" name="email" placeholder="Digite seu Email">
+                    <input type="text" name="email" placeholder="Digite seu Email" autocomplete="email">
                     <input type="password" name="senha" placeholder="Digite sua Senha">
                 </div>
                 <div id="botoes-form">

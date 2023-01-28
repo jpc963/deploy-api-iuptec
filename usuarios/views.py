@@ -82,9 +82,12 @@ def login(request):
             usuario = User.objects.filter(email=email).values_list('username', flat=True).get()  # Pega o username do usuário no banco de dados pelo email
             user = auth.authenticate(request, username=usuario, password=senha)  # Autentica o usuário
             if user is not None:
-                auth.login(request, user)
-                print('Login realizado com sucesso')
+                auth.login(request, user)  # Faz o login do usuário
                 return redirect('dashboard')
+
+            else:
+                messages.error(request, 'Usuário ou senha inválidos')
+                return redirect('login')
 
         else:
             messages.error(request, 'Usuário ou senha inválidos')

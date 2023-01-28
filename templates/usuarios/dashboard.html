@@ -4,7 +4,7 @@
     <div id="corpo-principal-painel">
         <div id="painel">
 
-            <h2>Olá, {{ nome }}</h2><br><br>
+            <h2>Olá, {{ nome }}!</h2><br><br>
             <div id="painel-veiculos">
                 {% if veiculos %}
                 <h1>Veículos Cadastrados</h1>
@@ -31,7 +31,7 @@
                     </table>
                 </div>
                 {% else %}
-                <h1 style="padding-bottom: 50px">Você não possui veículos cadastrados</h1>
+                <h1 style="padding-bottom: 50px">Você não possui veículos cadastrados ainda...</h1>
                 <button id="botao-cadastrar-veiculo" onclick="location.href='cadastro_veiculo'">Clique aqui para cadastrar</button>
 
                 {% endif %}

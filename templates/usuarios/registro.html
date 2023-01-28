@@ -9,11 +9,11 @@
                 <h1>Cadastro de novo usuário</h1>
                 <div id="inputs-registro">
                     {% include 'partials/_alertas.html' %}
-                    <input type="text" name="usuario" placeholder="Digite seu Usuário" required minlength="5">
-                    <input type="text" name="nome" placeholder="Digite seu Nome" required>
-                    <input type="email" name="email" placeholder="Digite seu Email" required>
-                    <input type="tel" pattern="[0-9]{2}[0-9]{5}[0-9]{4}" name="telefone" placeholder="Digite seu Número" required>
-                    <input type="password" name="senha" placeholder="Digite sua Senha" required>
+                    <input type="text" name="usuario" placeholder="Usuário" required minlength="5">
+                    <input type="text" name="nome" placeholder="Nome e Sobrenome" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" pattern="[0-9]{2,3}[0-9]{5}[0-9]{4}" name="telefone" placeholder="Número de Celular" required>
+                    <input type="password" name="senha" placeholder="Senha" required>
                     <input type="password" name="confirma_senha" placeholder="Repita sua Senha" required>
                 </div>
                 <div id="botoes-form">
